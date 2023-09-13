@@ -38,6 +38,6 @@ Get-NetFirewallRule -all | ForEach-Object {
 }
 ##>
 
-#allow HX agent to communicate to controller - need RemoteAddress(s)
-New-NetFirewallRule -DisplayName "Allow FireEye HX Agent to Controller" -Direction Outbound -Action Allow  -Protocol TCP -RemotePort 443 -RemoteAddress 8.8.8.8 -Program "C:\Program Files (x86)\FireEye\xagt\xagt.exe"
+#allow endpoint agent to communicate to controller - need RemoteAddress(s)
+New-NetFirewallRule -DisplayName "Allow Endpoint agent to Controller" -Direction Outbound -Action Allow  -Protocol TCP -RemotePort 443 -RemoteAddress 8.8.8.8 -Program "C:\Program Files (x86)\agent\agent.exe"
 }
